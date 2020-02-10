@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> My First Guess Game </title>
+
+</head>
+
+<body>
+
+  <h1> Guess my number! </h1>
+  <p> My number is between 1 and 10 </p>
+  <input type="text" id="number">
+  <button id="guess"> Guess! </button>
+  <p id="message"></p>
+
+  <script>
+    var randomNumber = Math.floor((Math.random() * 10)) + 1
+
+    document.getElementById("guess").onclick = function() {
+
+      if (document.getElementById("number").value > randomNumber) {
+
+        document.getElementById("message").innerHTML = "Too high!"
+        document.getElementById("message").style.color = "red"
+
+      } else if (document.getElementById("number").value < randomNumber) {
+
+        document.getElementById("message").innerHTML = "Too low!"
+        document.getElementById("message").style.color = "red"
+
+      } else {
+
+        document.getElementById("message").innerHTML = "That's it!"
+        document.getElementById("message").style.color = "green"
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>
